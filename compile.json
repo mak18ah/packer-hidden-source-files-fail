@@ -1,0 +1,30 @@
+{
+  "variables": {
+    "app_slug": "test-app"
+  },
+  "builders": [
+    {
+      "type": "docker",
+      "image": "ubuntu:14.04",
+      "discard": true
+    }
+  ],
+  "provisioners": [
+    {
+          "type": "file",
+          "source": ".",
+          "destination": "/tmp/app"
+    },
+    {
+          "type": "file",
+          "source": ".nvmrc",
+          "destination": "/tmp/app"
+    },
+    {
+       "type":"shell",
+       "inline":[
+         "cat /tmp/app/.nvmrc"
+       ]
+    }
+  ]
+}
