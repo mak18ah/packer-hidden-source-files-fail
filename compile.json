@@ -23,7 +23,8 @@
     {
        "type":"shell",
        "inline":[
-         "cat /tmp/app/.nvmrc"
+         "echo `cat /tmp/app/test/.hello`",
+         "echo `cat /tmp/app/.nvmrc`"
        ]
     }
   ]
